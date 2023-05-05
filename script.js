@@ -88,7 +88,10 @@ function fetchExchangeRates() {
         console.log(convertedAmountDisplay)
         displayConAmount.appendChild(convertedAmountDisplay)
     })
-    .catch(error => console.log('Error: Please Check Your Inputs', error));;
+    .catch(error => {
+      alert ("Unable to fetch the data")
+      console.log('Error: Please Check Your Inputs', error)
+    });
 }
 
 // FUNCTION FOR HISTORICAL DATA
@@ -187,6 +190,10 @@ function checkFav(a){
         console.log(convertedAmountDisplay)
         displayConAmount.appendChild(convertedAmountDisplay)
     })
-    .catch(error => console.log('Error: Please Check Your Inputs', error));;
+    .catch(error => 
+      {
+        alert ("Unable to fetch the data")
+        console.log('error', error)
+      });
 
 }
