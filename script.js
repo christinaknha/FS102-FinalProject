@@ -28,10 +28,10 @@ let favoriteCombos;
 let neededId;
 
 // EVENT LISTENERS
-// amountToConvert.addEventListener("change",fetchExchangeRates)
-// baseCurrency.addEventListener("change", fetchExchangeRates)
-// targetCurrency.addEventListener("change", fetchExchangeRates)
-// historicalRates.addEventListener("click", historicalData)
+amountToConvert.addEventListener("change",fetchExchangeRates)
+baseCurrency.addEventListener("change", fetchExchangeRates)
+targetCurrency.addEventListener("change", fetchExchangeRates)
+historicalRates.addEventListener("click", historicalData)
 favoriteButton.addEventListener("click", saveFavorite)
 
 // FUNCTION FOR EVENT LISTENERS
@@ -44,7 +44,7 @@ function saveUserCountryInput(){
     }
 }
 function saveUserAmountInput(){ 
-    if(amountToConvert.value >= 0 && typeof amountToConvert.value == Number){
+    if(amountToConvert.value >= 0 && amountToConvert.value != String){
       amount = amountToConvert.value;
     } else {
       alert ("Please enter a number that is greater than or equal to zero.")
@@ -156,6 +156,10 @@ function checkFav(a){
     targetCurrency.value = pairs[neededIndex][1];
 
     // FETCHES EXCHANGE RATES FROM SELECTED BASE CURRENCY
+    
+    saveUserCountryInput();
+    saveUserAmountInput();
+    
     var myHeaders = new Headers();
     myHeaders.append("apikey", "NYYpZHDpOuQubkMfxPTR8iAqjNhrmOM0");
 
