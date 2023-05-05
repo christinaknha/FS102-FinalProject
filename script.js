@@ -39,7 +39,7 @@ function saveUserCountryInput(){
     if (baseCurrency.value != targetCurrency.value){
       from = baseCurrency.value;
       to = targetCurrency.value;
-    } else if (baseCurrency.value != targetCurrency.value){
+    } else if (baseCurrency.value == targetCurrency.value){
       alert ("Please make sure base currency and target currency are different")
     }
 }
@@ -159,7 +159,7 @@ function checkFav(a){
     
     saveUserCountryInput();
     saveUserAmountInput();
-    
+
     var myHeaders = new Headers();
     myHeaders.append("apikey", "NYYpZHDpOuQubkMfxPTR8iAqjNhrmOM0");
 
